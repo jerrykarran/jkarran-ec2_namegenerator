@@ -16,16 +16,16 @@ if departmentName == 'marketing' or departmentName == 'Marketing' or departmentN
     departmentName =='accounting' or departmentName == 'FinOps' or departmentName == 'Finops' or \
     departmentName == 'finops' or departmentName == 'finOps':
         newname = departmentName + "-" # adding the department name to the string title
-        counterOutputMessage = 1       # keep track of the number of instance names needed
+        ec2NumberBeingCreated = 1       # keep track of the number of instance names needed
         print('--------------------------------')
         # create an instance name
         while (numberOfEc2Instances > 0):
             counterDigit = 0
-            while (counterDigit < 15): # generate each character
+            while (counterDigit < 20): # generate each character
                 newname += random.choice(allCharactersAndNumbers)
                 counterDigit += 1
-            print('EC2', counterOutputMessage, 'Name: ', newname)
-            counterOutputMessage += 1
+            print('EC2', ec2NumberBeingCreated, 'Name: ', newname)
+            ec2NumberBeingCreated += 1
             numberOfEc2Instances -= 1
             newname = departmentName + "-"
 else: # error for incorrect departments
