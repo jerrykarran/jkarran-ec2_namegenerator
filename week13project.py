@@ -15,18 +15,18 @@ departmentName = input('Enter your department (Marketing, Accounting, and FinOps
 lowercaseDepartmentName = departmentName.lower()
 print(lowercaseDepartmentName)
 if lowercaseDepartmentName == 'marketing' or lowercaseDepartmentName == 'accounting' or lowercaseDepartmentName == 'finops':
-        newname = departmentName.capitalize() + "-" # adding the department name to the string title with capitalization on the first letter
+        newname = departmentName.capitalize() + "-" # adding the department name to the string title
         ec2NumberBeingCreated = 1       # keep track of the number of instance names needed
         print('--------------------------------')
         # create an instance name
         while (numberOfEc2Instances > 0):
             counterDigit = 0
-            while (counterDigit < 10): # generate up to 10 characters
+            while (counterDigit < 20): # generate each character
                 newname += random.choice(allCharactersAndNumbers)
                 counterDigit += 1
             print('EC2', ec2NumberBeingCreated, 'Name: ', newname)
             ec2NumberBeingCreated += 1
             numberOfEc2Instances -= 1
-            newname = departmentName.capitalize() + "-"
+            newname = departmentName + "-"
 else: # error for incorrect departments
     print('Please do not use this name generator if you are not within the correct departments.')
