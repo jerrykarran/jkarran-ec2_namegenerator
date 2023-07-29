@@ -31,5 +31,3 @@ def generateEc2Name():
                 newname = departmentName.capitalize() + "-"
     else: # error for incorrect departments
         print('Please do not use this name generator if you are not within the correct departments.')
-        
-generateEc2Name()
